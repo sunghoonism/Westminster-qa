@@ -46,7 +46,7 @@ Future<Database> _initDatabase() async {
 class MyApp extends StatelessWidget {
   final Database database;
 
-  MyApp({required this.database});
+  const MyApp({super.key, required this.database});
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
 class MainScreen extends StatelessWidget {
   final Database database;
 
-  MainScreen({required this.database});
+  const MainScreen({super.key, required this.database});
 
   @override
   Widget build(BuildContext context) {
@@ -81,16 +81,16 @@ class MainScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 '웨스터민스터',
                 style: TextStyle(
                   fontSize: 30,
-                  color: const Color.fromARGB(255, 166, 121, 38),
+                  color: Color.fromARGB(255, 166, 121, 38),
                   fontWeight: FontWeight.w100,
                   letterSpacing: 2,
                 ),
               ),
-              Text(
+              const Text(
                 '대소요리문답',
                 style: TextStyle(
                   fontSize: 40,

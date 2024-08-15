@@ -27,8 +27,8 @@ class AdHelper {
 
   static Widget bottomBannerAdWidget(BannerAd? ad) {
     return ad == null
-        ? SizedBox()
-        : Container(
+        ? const SizedBox()
+        : SizedBox(
             height: ad.size.height.toDouble(),
             width: ad.size.width.toDouble(),
             child: AdWidget(ad: ad),

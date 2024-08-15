@@ -9,7 +9,7 @@ class QASmallPage extends StatefulWidget {
   final Database database;
   final String title;
 
-  QASmallPage({required this.database, required this.title});
+  const QASmallPage({super.key, required this.database, required this.title});
 
   @override
   _QASmallPageState createState() => _QASmallPageState();

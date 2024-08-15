@@ -1,16 +1,8 @@
-# west_qa
+# 웨스트민스터 대소요리문답
 
-A new Flutter project.
+본 앱은 플러터로 개발되었습니다.
 
-## Getting Started
+## 개발하기
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+이 앱을 플러터로 실행하려면 .env, .env.prod 파일이 필요합니다.   
+assets/config 폴더에 있는 .env.example 파일의 내용을 수정하고 .env와 .env.prod로 이름을 바꾸시기 바랍니다.
