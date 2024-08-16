@@ -9,7 +9,7 @@ class QALargePage extends StatefulWidget {
   final Database database;
   final String title;
 
-  QALargePage({required this.database, required this.title});
+  const QALargePage({super.key, required this.database, required this.title});
 
   @override
   _QALargePageState createState() => _QALargePageState();
@@ -126,7 +126,7 @@ class _QALargePageState extends State<QALargePage> {
                     child: const Icon(Icons.refresh),
                   ),
                   const SizedBox(height: 6),
-                  Container(
+                  SizedBox(
                     height: screenHeight / 4,
                     child: RotatedBox(
                       quarterTurns: 3,

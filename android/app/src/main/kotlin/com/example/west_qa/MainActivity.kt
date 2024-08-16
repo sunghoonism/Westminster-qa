@@ -1,4 +1,4 @@
-package com.example.west_qa
+package com.paradigm_a.west_qa
 
 import io.flutter.embedding.android.FlutterActivity
 

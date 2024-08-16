@@ -126,7 +126,7 @@ class _QASmallPageState extends State<QASmallPage> {
                     child: const Icon(Icons.refresh),
                   ),
                   const SizedBox(height: 6),
-                  Container(
+                  SizedBox(
                     height: screenHeight / 4,
                     child: RotatedBox(
                       quarterTurns: 3,
