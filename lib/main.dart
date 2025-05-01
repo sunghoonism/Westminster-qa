@@ -13,13 +13,21 @@ import 'dart:io';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // 모바일 광고 초기화
   MobileAds.instance.initialize();
-  final database = await _initDatabase();
+  
+  // 환경 파일 로드
   if (kReleaseMode) {
-    await dotenv.load(fileName: "assets/config/.env.prod");
+    await dotenv.load(fileName: "assets/config/.env.prod").catchError((e) {
+      // 프로덕션 환경 파일이 없으면 일반 환경 파일 로드
+      return dotenv.load(fileName: "assets/config/.env");
+    });
   } else {
     await dotenv.load(fileName: "assets/config/.env");
   }
+  
+  final database = await _initDatabase();
   runApp(MyApp(database: database));
 }
 
