@@ -35,7 +35,9 @@ def envFile = file("${rootProject.projectDir}/../assets/config/.env")
 if (envFile.exists()) {
     envFile.withInputStream { stream -> dotenv.load(stream) }
 } else {
-    throw new FileNotFoundException("Could not find .env file at: ${envFile.path}")
+    println("경고: .env 파일을 찾을 수 없습니다: ${envFile.path}")
+    // 기본값 설정
+    dotenv.put('ANDROID_AD_APP_ID', 'ca-app-pub-3940256099942544~3347511713')
 }
 
 android {
@@ -44,12 +46,12 @@ android {
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     sourceSets {
