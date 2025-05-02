@@ -6,8 +6,8 @@ class DonationDialog {
     showDialog(
       context: context,
       builder: (context) {
-        return AlertDialog(
-          title: const Text('아직 구현되지 않은 기능입니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        return const AlertDialog(
+          title: Text('아직 구현되지 않은 기능입니다.', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,

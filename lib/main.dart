@@ -8,7 +8,6 @@ import 'package:path/path.dart';
 import 'package:flutter/services.dart';
 import 'large_qa.dart';
 import 'small_qa.dart';
-import 'utils/dialog.dart';
 import 'utils/donation_dialog.dart';
 import 'dart:io';
 
