@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'large_qa.dart';
 import 'small_qa.dart';
 import 'utils/dialog.dart';
+import 'utils/donation_dialog.dart';
 import 'dart:io';
 
 Future<void> main() async {
@@ -148,7 +149,7 @@ class MainScreen extends StatelessWidget {
                 child: const Text('후원을 원하신다면',
                     style: TextStyle(fontSize: 14, color: Colors.white70)),
                 onPressed: () {
-                  simpleDialogue(context, '후원', '아직 구현되지 않은 기능입니다.');
+                  DonationDialog.show(context);
                 },
               ),
             ],
