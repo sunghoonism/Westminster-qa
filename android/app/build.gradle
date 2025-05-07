@@ -63,7 +63,7 @@ android {
         applicationId "com.paradigm_a.west_qa"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 23
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -91,6 +91,6 @@ flutter {
 }
 
 dependencies {
-    implementation("com.google.android.gms:play-services-ads:23.2.0")
+    implementation("com.google.android.gms:play-services-ads:24.0.0")
     implementation 'com.android.billingclient:billing:6.0.1'
 }

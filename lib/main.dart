@@ -15,7 +15,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   // 모바일 광고 초기화
-  MobileAds.instance.initialize();
+  final RequestConfiguration requestConfiguration = RequestConfiguration(
+    maxAdContentRating: MaxAdContentRating.g,
+    tagForChildDirectedTreatment: TagForChildDirectedTreatment.yes,
+    tagForUnderAgeOfConsent: TagForUnderAgeOfConsent.yes,
+  );
+  MobileAds.instance.updateRequestConfiguration(requestConfiguration);
+  await MobileAds.instance.initialize();
   
   // 환경 파일 로드
   if (kReleaseMode) {

@@ -1,0 +1,2 @@
+C:/Users/sungh/Documents/codes/Westminster-qa/android/app/.cxx/RelWithDebInfo/3d5e6k3q/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/sungh/Documents/codes/Westminster-qa/android/app/.cxx/RelWithDebInfo/3d5e6k3q/arm64-v8a/CMakeFiles/rebuild_cache.dir
