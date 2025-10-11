@@ -42,7 +42,7 @@ if (envFile.exists()) {
 
 android {
     namespace "com.paradigm_a.west_qa"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -64,7 +64,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 23
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         manifestPlaceholders += [AD_APP_ID: dotenv['ANDROID_AD_APP_ID']]
@@ -91,6 +91,6 @@ flutter {
 }
 
 dependencies {
-    implementation("com.google.android.gms:play-services-ads:24.0.0")
+    implementation("com.google.android.gms:play-services-ads:23.5.0")
     implementation 'com.android.billingclient:billing:6.0.1'
 }
