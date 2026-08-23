@@ -28,10 +28,14 @@ class AdHelper {
   static Widget bottomBannerAdWidget(BannerAd? ad) {
     return ad == null
         ? const SizedBox()
-        : SizedBox(
-            height: ad.size.height.toDouble(),
-            width: ad.size.width.toDouble(),
-            child: AdWidget(ad: ad),
+        // edge-to-edge에서 배너가 내비게이션 바에 가려지지 않도록 하단 인셋을 확보한다.
+        : SafeArea(
+            top: false,
+            child: SizedBox(
+              height: ad.size.height.toDouble(),
+              width: ad.size.width.toDouble(),
+              child: AdWidget(ad: ad),
+            ),
           );
   }
 }

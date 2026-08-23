@@ -3,6 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'utils/ad.dart';
+import 'utils/app_style.dart';
 import 'utils/dialog.dart';
 import 'dart:async';
 
@@ -116,7 +117,6 @@ class _QASmallPageState extends State<QASmallPage> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final theme = Theme.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -125,10 +125,11 @@ class _QASmallPageState extends State<QASmallPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2),
             child: CircleAvatar(
-              backgroundColor: _showSearchBar ? theme.colorScheme.primary.withOpacity(0.2) : Colors.transparent,
+              backgroundColor:
+                  _showSearchBar ? Colors.white24 : Colors.transparent,
+              foregroundColor: Colors.white,
               child: IconButton(
                 icon: const Icon(Icons.search),
-                color: _showSearchBar ? theme.colorScheme.primary : null,
                 onPressed: () {
                   setState(() {
                     _showSearchBar = !_showSearchBar;
@@ -144,10 +145,11 @@ class _QASmallPageState extends State<QASmallPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 2),
             child: CircleAvatar(
-              backgroundColor: sliderVisible ? theme.colorScheme.primary.withOpacity(0.2) : Colors.transparent,
+              backgroundColor:
+                  sliderVisible ? Colors.white24 : Colors.transparent,
+              foregroundColor: Colors.white,
               child: IconButton(
                 icon: const Icon(Icons.format_size),
-                color: sliderVisible ? theme.colorScheme.primary : null,
                 onPressed: () {
                   setState(() {
                     sliderVisible = !sliderVisible;
@@ -174,6 +176,8 @@ class _QASmallPageState extends State<QASmallPage> {
                     autofocus: true,
                     decoration: InputDecoration(
                       hintText: '질문 또는 답변에서 검색',
+                      filled: true,
+                      fillColor: Colors.white,
                       prefixIcon: const Icon(Icons.search),
                       suffixIcon: _searchText.isNotEmpty
                           ? IconButton(
@@ -208,20 +212,29 @@ class _QASmallPageState extends State<QASmallPage> {
                     itemCount: filteredList.length,
                     itemBuilder: (context, index) {
                       final qa = filteredList[index];
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
+                      return Container(
+                        // 표처럼 보이도록 행마다 배경색을 번갈아 적용한다.
+                        color: AppStyle.rowColor(index),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 12),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SelectableText(
                               qa['question'] as String,
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: _fontSize),
+                                fontWeight: FontWeight.bold,
+                                fontSize: _fontSize,
+                                color: AppStyle.questionColor,
+                              ),
                             ),
                             const SizedBox(height: 8),
                             SelectableText(
                               qa['answer'] as String,
-                              style: TextStyle(fontSize: _fontSize),
+                              style: TextStyle(
+                                fontSize: _fontSize,
+                                color: AppStyle.answerColor,
+                              ),
                             ),
                           ],
                         ),

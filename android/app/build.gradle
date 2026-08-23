@@ -99,5 +99,4 @@ flutter {
 
 dependencies {
     implementation("com.google.android.gms:play-services-ads:23.5.0")
-    implementation 'com.android.billingclient:billing:6.0.1'
 }
